@@ -2,6 +2,14 @@ const mix = require("laravel-mix");
 const exec = require("child_process").exec;
 require("dotenv").config();
 
+const app       = 'app';
+const resources = 'resources';
+const assets    = `${resources}/assets`;
+const dist      = './public';
+
+mix.setPublicPath(dist);
+mix.setResourceRoot('../');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
