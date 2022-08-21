@@ -5,7 +5,8 @@
     <span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy;
       <script>
         document.write(new Date().getFullYear())
-      </script><a class="ms-25" href="https://www.sadcpif.org"
+      </script>
+        <a class="ms-25" href="https://www.sadcpif.org"
         target="_blank">SADC Parliamentary Forum</a>,
       <span class="d-none d-sm-inline-block">All rights Reserved</span>
     </span>

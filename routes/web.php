@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthenticationController;
 
 
 /*
@@ -15,6 +16,10 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('login', [AuthenticationController::class, 'login_basic'])->name('login');
+    Route::get('register', [AuthenticationController::class, 'register_basic'])->name('register_basic');
+});
 
 Route::group(['middleware' => 'auth'], function(){
     // Main Page Route

@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'user_type',
+        'signature_url',
     ];
 
     /**
@@ -41,4 +44,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the supplier associated with the user.
+     */
+    public function supplier()
+    {
+        return $this->hasOne(Supplier::class);
+    }
+
+    /**
+     * Get the supplier associated with the user.
+     */
+    public function lpo()
+    {
+        return $this->hasMany(LocalPurchasingOrder::class);
+    }
 }
